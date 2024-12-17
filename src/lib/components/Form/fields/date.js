@@ -9,6 +9,7 @@ import dayjs from 'dayjs';
 const Field = ({ column, field, fieldLabel, formik, otherProps, classes, fieldConfigs }) => {
     const isDisabled = (fieldConfigs?.disabled) || (column.dependentField && formik.values[column.dependentField.field] === "");
     const dateValue = formik.values[field] ? dayjs(formik.values[field]) : null;
+    console.log("dateValue", dateValue);
 
     fieldLabel = fieldLabel || column.label;
     fieldLabel += column.required ? " *" : "";
@@ -28,7 +29,10 @@ const Field = ({ column, field, fieldLabel, formik, otherProps, classes, fieldCo
                 fullWidth
                 name={field}
                 value={dateValue}
-                onChange={(value) => formik.setFieldValue(field, value)}
+                onChange={(value) => {
+                    console.log("value", value);
+                    formik.setFieldValue(field, value)
+                }}
                 onBlur={formik.handleBlur}
                 helperText={formik.touched[field] && formik.errors[field]}
                 disableFuture={column.disableFuture}

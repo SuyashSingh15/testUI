@@ -50,4 +50,4 @@ var _Dialog = require("./components/Dialog");
 var _index = _interopRequireDefault(require("./components/Grid/index"));
 var _uiModels = require("./components/Grid/ui-models");
 var _useRouter = require("./components/useRouter/useRouter");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
